@@ -41,6 +41,13 @@ pipeline {
                 '''
             }
         }
+        stage('Code Quality') {
+    steps {
+        echo 'Running code quality checks with flake8...'
+        sh 'python3 -m flake8 .'
+        }
+    }
+
     }
 
     post {
